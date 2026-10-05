@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* Slow inhale/exhale used by the loading screen */
+@theme {
+  --animate-breathe: breathe 8s ease-in-out infinite;
+
+  @keyframes breathe {
+    0%, 100% {
+      transform: scale(0.85);
+    }
+    50% {
+      transform: scale(1);
+    }
+  }
+}
+
+/* Thin pastel scrollbar: standard properties for Firefox/Chromium, ::-webkit-* for Safari */
+@utility scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #cdb4db transparent;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #cdb4db;
+    border-radius: 9999px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #b497cf;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+}
